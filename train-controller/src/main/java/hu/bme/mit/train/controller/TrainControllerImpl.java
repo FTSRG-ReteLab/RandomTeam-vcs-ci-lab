@@ -47,10 +47,4 @@ public class TrainControllerImpl implements TrainController {
 		this.step = joystickPosition;
 		followSpeed();
 	}
-	
-	@Override
-	void changeSpeed(){
-		                      
-	}
-
 }
