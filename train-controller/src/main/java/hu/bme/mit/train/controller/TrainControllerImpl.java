@@ -21,11 +21,6 @@ public class TrainControllerImpl implements TrainController {
 	public void StartEngine(){
 		engine.start();
 	}
-
-	@Override
-	public void StopEngine(){
-		engine.stop();
-	}
 	
 	@Override
 	public void followSpeed() {
