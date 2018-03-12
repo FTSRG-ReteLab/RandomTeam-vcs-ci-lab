@@ -11,6 +11,4 @@ public interface TrainController {
 	void setJoystickPosition(int joystickPosition);
 	
 	void StartEngine();
-
-	void StopEngine();
 }
