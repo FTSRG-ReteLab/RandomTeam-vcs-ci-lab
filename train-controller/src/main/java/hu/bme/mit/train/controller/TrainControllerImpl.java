@@ -12,6 +12,7 @@ public class TrainControllerImpl implements TrainController {
 		public void Run(){
 			while(true){
 				followSpeed();
+				Thread.Spleep(2000);
 			}
 		}
 	}
