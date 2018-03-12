@@ -16,13 +16,8 @@ public class TrainControllerImpl implements TrainController {
 		}
 	}
 
-	public void tFollowspeedRun(boolean run){
-		if(run){
-			tFollowSpeed.start();
-		}
-		else{
-			tFollowSpeed.stop();
-		}
+	public void tFollowspeedRun(){
+		tFollowSpeed.start();
 	}
 	
 	@Override
