@@ -7,7 +7,26 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 65;
+	private int speed = 0;
 
+	private Thread engine = new Thread(){
+		public void Run(){
+			while(true){
+				followSpeed();
+			}
+		}
+	};
+
+	@Override
+	public void StartEngine(){
+		engine.start();
+	}
+
+	@Override
+	public void StopEngine(){
+		engine.stop();
+	}
+	
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {
@@ -43,7 +62,6 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
-		this.step = joystickPosition;		
+		this.step = joystickPosition;
 	}
-
 }
