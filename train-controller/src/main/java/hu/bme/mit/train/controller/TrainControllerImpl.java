@@ -7,24 +7,18 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 65;
-	
-	provate Thread tFollowSpeed = new Thread(){
-		public void Run(){
-			while(true){
-				followSpeed();
-			}
-		}
+
+	private Thread engine = new Thread(() -> {
+        while(true){
+            followSpeed();
+        }
+    });
+
+	@Override
+	public void StartEngine(){
+		engine.start();
 	}
 
-	public void tFollowspeedRun(boolean run){
-		if(run){
-			tFollowSpeed.start();
-		}
-		else{
-			tFollowSpeed.stop();
-		}
-	}
-	
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {

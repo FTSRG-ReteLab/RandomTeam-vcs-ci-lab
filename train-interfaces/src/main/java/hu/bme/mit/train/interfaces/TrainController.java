@@ -3,8 +3,6 @@ package hu.bme.mit.train.interfaces;
 public interface TrainController {
 
 	void followSpeed();
-	
-	void tFollowspeedRun(boolean run);
 
 	int getReferenceSpeed();
 
@@ -12,4 +10,5 @@ public interface TrainController {
 
 	void setJoystickPosition(int joystickPosition);
 
+	void StartEngine();
 }
